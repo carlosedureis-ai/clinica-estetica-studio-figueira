@@ -74,10 +74,7 @@
 
     <!-- Estilos Dinâmicos do Cabeçalho -->
     <style>
-        /* Light Theme Header Transition */
-        .site-header {
-            transition: all 0.4s ease;
-        }
+        /* Light Theme Header (Sem transition global para não conflitar com GSAP) */
         .site-header.is-light .js-header-bg {
             background-color: rgba(247, 244, 239, 0.95) !important;
             border-bottom-color: rgba(185, 149, 102, 0.2) !important;
@@ -111,9 +108,9 @@
     </style>
 
     <!-- Header Premium -->
-    <header id="site-header" class="site-header absolute top-0 w-full z-50 transition-all duration-300">
+    <header id="site-header" class="site-header absolute top-0 w-full z-50">
         <!-- Fundo dinâmico (scrolled) -->
-        <div class="absolute inset-0 bg-[#0F0F0F]/82 backdrop-blur-[16px] border-b border-[#B99566]/32 transition-opacity duration-300 opacity-0 js-header-bg"></div>
+        <div class="absolute inset-0 bg-[#0F0F0F]/82 backdrop-blur-[16px] border-b border-[#B99566]/32 transition-all duration-300 opacity-0 js-header-bg"></div>
         
         <div class="max-w-[1460px] mx-auto px-6 md:px-8 h-[88px] flex items-center justify-between relative z-10 js-header-inner transition-all duration-300">
             
