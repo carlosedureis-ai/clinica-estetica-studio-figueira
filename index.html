@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Figueira | Estética Facial e Sobrancelhas em Manaus</title>
+    <meta name="description" content="Estética facial, limpeza de pele, dermaplaning, sobrancelhas e remoção de sinais no Centro de Manaus. Conheça o Studio Figueira e agende seu atendimento.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Substituindo Playfair por uma combinação mais premium (Display Serif + Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nude: {
+                            50: '#F9F8F6', // Fundo editorial claro
+                            100: '#F3EFEA', // Camada secundária
+                            200: '#E8DFD3', // Bordas e divisores
+                            500: '#C2A379', // Acento
+                            700: '#9B7E58', // Texto Nude
+                            900: '#6B5437', // Texto Escuro Nude
+                        },
+                        escuro: {
+                            900: '#111111', // Off-black luxo
+                            800: '#222222', 
+                            600: '#5A5A5A', 
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Instrument Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.05)',
+                        'float': '0 20px 40px -10px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #F9F8F6;
+            color: #222;
+            overflow-x: hidden;
+        }
+        
+        /* Oculta barra de rolagem visualmente mas mantém a função */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #C2A379; }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased font-sans selection:bg-nude-500 selection:text-white">
+
+    <!-- Estilos Dinâmicos do Cabeçalho -->
+    <style>
+        /* Light Theme Header Transition */
+        .site-header {
+            transition: all 0.4s ease;
+        }
+        .site-header.is-light .js-header-bg {
+            background-color: rgba(247, 244, 239, 0.95) !important;
+            border-bottom-color: rgba(185, 149, 102, 0.2) !important;
+        }
+        .site-header.is-light .js-nav-link {
+            color: #171512 !important;
+        }
+        .site-header.is-light .js-nav-link:hover, 
+        .site-header.is-light .js-nav-link.is-active {
+            color: #B99566 !important;
+        }
+        .site-header.is-light .js-anim-header-item .text-\[\#F7F4EF\] {
+            color: #171512 !important;
+        }
+        .site-header.is-light #btn-mobile-menu {
+            color: #171512 !important;
+        }
+        /* Garantir que o texto do logo Studio Figueira mude para escuro */
+        .site-header.is-light a.group span.text-\[\#F7F4EF\] {
+            color: #171512 !important;
+        }
+        /* Botão Agendar no Light Mode */
+        .site-header.is-light a.border-\[\#B99566\] {
+            color: #171512 !important;
+            border-color: #B99566 !important;
+        }
+        .site-header.is-light a.border-\[\#B99566\]:hover {
+            background-color: #B99566 !important;
+            color: #F7F4EF !important;
+        }
+    </style>
+
+    <!-- Header Premium -->
+    <header id="site-header" class="site-header absolute top-0 w-full z-50 transition-all duration-300">
+        <!-- Fundo dinâmico (scrolled) -->
+        <div class="absolute inset-0 bg-[#0F0F0F]/82 backdrop-blur-[16px] border-b border-[#B99566]/32 transition-opacity duration-300 opacity-0 js-header-bg"></div>
+        
+        <div class="max-w-[1460px] mx-auto px-6 md:px-8 h-[88px] flex items-center justify-between relative z-10 js-header-inner transition-all duration-300">
+            
+            <!-- Left: Brand (Monograma + Wordmark) -->
+            <a href="#" class="flex items-center gap-4 group js-anim-header-item outline-none focus-visible:ring-2 focus-visible:ring-[#B99566] rounded-md">
+                <!-- Monograma SF -->
+                <div class="w-[46px] h-[46px] rounded-full border border-[#B99566] flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                    <span class="font-serif text-[#B99566] text-xl tracking-wider leading-none relative top-[1px]">SF</span>
+                </div>
+                <!-- Wordmark -->
+                <div class="hidden sm:flex flex-col">
+                    <span class="font-serif text-[#F7F4EF] text-[13px] tracking-[0.15em] uppercase">Studio Figueira</span>
+                    <span class="font-sans text-[#B99566] text-[9px] tracking-[0.2em] uppercase mt-0.5">Estética Facial</span>
+                </div>
+            </a>
+
+            <!-- Center: Navigation -->
+            <nav class="hidden lg:flex items-center gap-10 js-anim-header-item">
+                <a href="#sobre" class="js-nav-link relative text-[#F7F4EF] text-[11px] xl:text-[12px] uppercase tracking-[0.15em] font-sans hover:text-white transition-colors py-2 outline-none focus-visible:ring-2 focus-visible:ring-[#B99566]">O Studio
+                    <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#B99566] transition-all duration-300 js-nav-indicator"></span>
+                </a>
+                <a href="#servicos-section" class="js-nav-link relative text-[#F7F4EF] text-[11px] xl:text-[12px] uppercase tracking-[0.15em] font-sans hover:text-white transition-colors py-2 outline-none focus-visible:ring-2 focus-visible:ring-[#B99566]">Cuidados
+                    <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#B99566] transition-all duration-300 js-nav-indicator"></span>
+                </a>
+                <a href="#experiencia" class="js-nav-link relative text-[#F7F4EF] text-[11px] xl:text-[12px] uppercase tracking-[0.15em] font-sans hover:text-white transition-colors py-2 outline-none focus-visible:ring-2 focus-visible:ring-[#B99566]">Experiência
+                    <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#B99566] transition-all duration-300 js-nav-indicator"></span>
+                </a>
+                <a href="#contato" class="js-nav-link relative text-[#F7F4EF] text-[11px] xl:text-[12px] uppercase tracking-[0.15em] font-sans hover:text-white transition-colors py-2 outline-none focus-visible:ring-2 focus-visible:ring-[#B99566]">Localização
+                    <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#B99566] transition-all duration-300 js-nav-indicator"></span>
+                </a>
+            </nav>
+
+            <!-- Right: Instagram + CTA + Mobile Menu Button -->
+            <div class="flex items-center gap-6 js-anim-header-item">
+                
+                <a href="https://www.instagram.com/studiofigueira_esteticafacial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram do Studio Figueira" class="text-[#B99566] hover:text-[#F7F4EF] transition-colors hidden md:flex outline-none focus-visible:ring-2 focus-visible:ring-[#B99566] rounded-sm p-1">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-[20px] h-[20px]">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                
+                <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="flex items-center justify-center gap-1.5 h-[36px] md:h-[48px] px-4 md:px-[28px] rounded-[24px] border border-[#B99566] text-[#F7F4EF] text-[10px] md:text-[11px] font-sans uppercase tracking-[0.15em] hover:bg-[#B99566] hover:text-[#111] transition-all duration-300 group outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111] focus-visible:ring-[#B99566]">
+                    AGENDAR
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-3 h-3 group-hover:translate-x-[2px] group-hover:-translate-y-[2px] transition-transform duration-300">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </a>
+
+                <button id="btn-mobile-menu" class="lg:hidden flex flex-col justify-center items-center w-[44px] h-[44px] gap-[6px] text-[#F7F4EF] outline-none focus-visible:ring-2 focus-visible:ring-[#B99566] rounded-md" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+                    <span class="w-[22px] h-[1px] bg-current transition-transform duration-300 origin-center js-menu-line-1"></span>
+                    <span class="w-[22px] h-[1px] bg-current transition-transform duration-300 origin-center js-menu-line-2"></span>
+                </button>
+            </div>
+            
+            <!-- Conexão Fio Dourado Central -->
+            <div class="absolute -bottom-[6px] left-1/2 -translate-x-1/2 w-[4px] h-[4px] bg-[#B99566] rounded-full opacity-0 transition-opacity duration-500 js-header-thread"></div>
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1px] h-2 bg-[#B99566] opacity-0 transition-opacity duration-500 js-header-thread"></div>
+            
+            <!-- Linha inferior animada no Load -->
+            <div class="absolute bottom-0 left-0 w-full h-[1px] bg-[#B99566]/30 origin-left scale-x-0 js-header-bottom-line"></div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#0F0F0F] flex flex-col justify-center px-8 opacity-0 pointer-events-none transition-opacity duration-500" aria-hidden="true">
+        <nav class="flex flex-col gap-8 text-center js-mobile-nav">
+            <a href="#sobre" class="text-3xl font-serif text-[#F7F4EF] hover:text-[#B99566] transition-colors js-mobile-link">O Studio</a>
+            <a href="#servicos-section" class="text-3xl font-serif text-[#F7F4EF] hover:text-[#B99566] transition-colors js-mobile-link">Cuidados</a>
+            <a href="#experiencia" class="text-3xl font-serif text-[#F7F4EF] hover:text-[#B99566] transition-colors js-mobile-link">Experiência</a>
+            <a href="#contato" class="text-3xl font-serif text-[#F7F4EF] hover:text-[#B99566] transition-colors js-mobile-link">Localização</a>
+        </nav>
+        
+        <div class="w-12 h-[1px] bg-[#B99566]/30 mx-auto my-12"></div>
+        
+        <div class="flex flex-col items-center gap-8">
+            <a href="https://www.instagram.com/studiofigueira_esteticafacial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram do Studio Figueira" class="text-[#B99566] flex items-center justify-center">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-[28px] h-[28px]">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            
+            <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="flex items-center justify-center gap-2 h-[48px] px-8 rounded-full border border-[#B99566] text-[#F7F4EF] text-[12px] font-sans uppercase tracking-[0.15em]">
+                AGENDAR ATENDIMENTO
+            </a>
+        </div>
+    </div>
+
+    <!-- 1. Banner Principal (Editorial, Surrealista) -->
+    <section class="relative min-h-[100dvh] flex items-center justify-center bg-escuro-900 pt-32 pb-20" style="overflow: clip;" id="hero-section">
+        <style>
+            @keyframes float-woman-left {
+                0%, 100% { transform: translateY(0) rotate(0); }
+                50% { transform: translateY(-15px) rotate(1deg); }
+            }
+            @keyframes float-woman-right {
+                0%, 100% { transform: translateY(0) rotate(0); }
+                50% { transform: translateY(15px) rotate(-1deg); }
+            }
+            .animate-float-w-left { animation: float-woman-left 12s ease-in-out infinite; }
+            .animate-float-w-right { animation: float-woman-right 14s ease-in-out infinite; }
+        </style>
+
+        <!-- Background Atmosphere -->
+        <div class="absolute inset-0 z-0 pointer-events-none select-none js-anim-hero-bg">
+            <div class="absolute inset-0 bg-escuro-900 z-0"></div>
+            <!-- Grain Texture Overlay -->
+            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.04] mix-blend-overlay z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-escuro-900 z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-escuro-900 via-transparent to-transparent z-10"></div>
+        </div>
+
+        <!-- Floating Women Elements (Esquerda e Direita) -->
+        <!-- Usando as fotos individuais em alta qualidade, ajustadas para o centro e otimizadas para mobile -->
+        
+        <!-- Mulher da Esquerda -->
+        <div class="absolute -left-[5%] top-[0%] md:left-[8%] lg:left-[15%] md:top-[5%] w-[55vw] md:w-[28vw] lg:w-[22vw] max-w-[400px] aspect-[3/4] z-10 pointer-events-none opacity-40 md:opacity-85 animate-float-w-left js-anim-hero-photo"
+             style="mask-image: radial-gradient(ellipse at 50% 40%, black 35%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 35%, transparent 70%);">
+             <img src="assets/mulher-esquerda.jpg" alt="Profissional Esquerda" class="w-full h-full object-cover object-top grayscale-[15%]">
+        </div>
+
+        <!-- Mulher da Direita -->
+        <div class="absolute -right-[5%] bottom-[0%] md:right-[8%] lg:right-[15%] md:bottom-[5%] w-[55vw] md:w-[28vw] lg:w-[22vw] max-w-[400px] aspect-[3/4] z-10 pointer-events-none opacity-40 md:opacity-85 animate-float-w-right js-anim-hero-photo"
+             style="mask-image: radial-gradient(ellipse at 50% 40%, black 35%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 35%, transparent 70%);">
+             <img src="assets/mulher-direita.jpg" alt="Profissional Direita" class="w-full h-full object-cover object-top grayscale-[15%]">
+        </div>
+
+        <!-- Hero Content (Centered) -->
+        <div class="container mx-auto px-6 relative z-20 text-center flex flex-col items-center justify-center h-full mt-10 md:mt-0 js-anim-hero-content">
+            <div class="max-w-4xl mx-auto gsap-hero">
+                
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-medium leading-[1.05] tracking-tight mb-6 text-nude-50 font-serif" 
+                    style="text-shadow: 0 0 20px rgba(194,163,121,0.15);">
+                    Studio Figueira. <br />
+                    <span class="italic font-light text-nude-500 text-4xl md:text-6xl lg:text-7xl block mt-2">A beleza realçada.</span>
+                </h1>
+                
+                <p class="text-base md:text-lg text-nude-100/80 max-w-lg mx-auto mb-16 font-light tracking-wide leading-relaxed"
+                   style="text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+                    Estética facial & sobrancelhas em Manaus. Removemos o excesso para que a sua essência seja inesquecível.
+                </p>
+
+                <div class="flex flex-col items-center gap-6 relative">
+                    <!-- Anchor point for the thread -->
+                    <div class="absolute -top-10 left-1/2 w-[1px] h-[1px]" id="hero-thread-start"></div>
+
+                    <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="relative group cursor-pointer inline-block z-10">
+                       <div class="absolute inset-0 bg-nude-500/30 blur-xl rounded-full opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
+                       <div class="relative border border-nude-200/20 bg-nude-50/5 backdrop-blur-md px-8 py-3 rounded-full flex items-center gap-3 text-xs md:text-sm text-nude-50 uppercase tracking-widest hover:bg-nude-50/10 transition-colors duration-300">
+                         <i class="fa-brands fa-whatsapp text-lg text-nude-500"></i>
+                         <span>Agendar Atendimento</span>
+                       </div>
+                    </a>
+                    
+                    <div class="flex items-center gap-4 text-[10px] md:text-xs text-nude-100/40 uppercase tracking-widest mt-8 font-mono">
+                       <span class="flex items-center gap-2"><i class="fa-solid fa-map-pin"></i> Rio Negro Center</span>
+                       <span class="w-px h-3 bg-nude-100/20"></span>
+                       <span>Manaus, AM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gradiente de Transição Suave -->
+        <!-- O gradient usa a cor exata da próxima seção (#F7F4EF) -->
+        <div class="absolute -bottom-[2px] left-0 w-full h-[clamp(120px,16vh,180px)] md:h-[clamp(160px,20vh,280px)] z-[15] pointer-events-none" aria-hidden="true" style="background: linear-gradient(to bottom, rgba(247, 244, 239, 0) 0%, rgba(247, 244, 239, 0.03) 18%, rgba(247, 244, 239, 0.12) 38%, rgba(247, 244, 239, 0.35) 58%, rgba(247, 244, 239, 0.68) 76%, rgba(247, 244, 239, 0.92) 90%, #F7F4EF 100%);"></div>
+        
+        <!-- Fio Dourado de Conexão -->
+        <div class="absolute -bottom-[2px] left-0 w-full h-[35vh] z-[25] pointer-events-none overflow-visible js-enabled:opacity-0 js-anim-hero-thread" aria-hidden="true">
+            <!-- Desktop SVG -->
+            <svg class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-full hidden md:block overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <!-- Starts center, curves slightly right, then centers back at X=50 exactly at the bottom -->
+                <path d="M 50 0 C 50 30, 52 40, 50 102" fill="none" stroke="#B99566" stroke-width="0.2" vector-effect="non-scaling-stroke" stroke-linecap="round" class="js-golden-path-hero"/>
+            </svg>
+            
+            <!-- Mobile SVG -->
+            <!-- Matches the left-[30px] exact coordinate used in mobile -->
+            <div class="absolute bottom-0 left-[30px] w-[2px] h-full md:hidden overflow-visible">
+                <svg class="w-full h-full overflow-visible" viewBox="0 0 10 100" preserveAspectRatio="none">
+                    <path d="M 5 0 C 5 50, 10 60, 5 102" fill="none" stroke="#B99566" stroke-width="1.5" vector-effect="non-scaling-stroke" stroke-linecap="round" class="js-golden-path-hero"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Sobre o Studio -->
+    <section id="sobre" class="scroll-mt-24 py-24 md:py-32 bg-[#F7F4EF] relative overflow-hidden flex items-center min-h-[90vh] md:min-h-screen">
+        
+        <!-- SVG Canvas (Absolute) -->
+        <!-- Usamos opacity-0 e opacity-100 em vez de hidden para que o SVG sempre exista no DOM e possa ser medido pelo GSAP getTotalLength() -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-10" aria-hidden="true">
+            
+            <!-- Desktop SVG -->
+            <svg class="absolute inset-0 mx-auto w-full h-full max-w-[1000px] overflow-visible opacity-0 md:opacity-100 transition-opacity" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1000 1000" id="golden-thread-desktop">
+                <!-- Main Line -->
+                <path class="js-golden-path" d="M 500 0 C 400 150, 450 250, 480 300 C 500 350, 480 400, 480 450 C 480 470, 450 490, 450 510 C 460 520, 470 520, 465 530 C 460 540, 470 550, 475 560 C 475 600, 540 620, 540 650 C 540 730, 480 800, 520 900 C 560 1000, 520 1050, 520 1100" fill="none" stroke="#B99566" stroke-width="2" stroke-linecap="round"/>
+                
+                <!-- Folha -->
+                <path class="js-golden-path" d="M 480 150 C 440 180, 450 240, 480 300 C 510 240, 520 180, 480 150 Z" fill="none" stroke="#B99566" stroke-width="1.5"/>
+                <path class="js-golden-path" d="M 480 150 Q 470 220, 480 300" fill="none" stroke="#B99566" stroke-width="1.5" opacity="0.6"/>
+
+                <!-- Nodes -->
+                <g class="js-golden-node" transform="translate(480, 300)">
+                    <circle r="8" stroke="#B99566" fill="#F9F8F6" stroke-width="1.5"/>
+                    <circle r="3" fill="#B99566"/>
+                    <text x="20" y="5" fill="#6B5437" font-size="12" font-family="sans-serif" letter-spacing="0.2em" font-weight="600">PELE</text>
+                </g>
+                <g class="js-golden-node" transform="translate(540, 650)">
+                    <circle r="8" stroke="#B99566" fill="#F9F8F6" stroke-width="1.5"/>
+                    <circle r="3" fill="#B99566"/>
+                    <text x="20" y="5" fill="#6B5437" font-size="12" font-family="sans-serif" letter-spacing="0.2em" font-weight="600">SOBRANCELHAS</text>
+                </g>
+                <g class="js-golden-node" transform="translate(520, 900)">
+                    <circle r="8" stroke="#B99566" fill="#F9F8F6" stroke-width="1.5"/>
+                    <circle r="3" fill="#B99566"/>
+                    <text x="20" y="5" fill="#6B5437" font-size="12" font-family="sans-serif" letter-spacing="0.2em" font-weight="600">CUIDADO</text>
+                </g>
+            </svg>
+
+            <!-- Mobile SVG -->
+            <svg class="absolute left-0 top-0 w-full h-full overflow-visible opacity-100 md:opacity-0 transition-opacity" preserveAspectRatio="xMinYMid meet" viewBox="0 0 300 1000" id="golden-thread-mobile">
+                <!-- Main Line Mobile -->
+                <path class="js-golden-path" d="M 30 0 C 80 150, 10 250, 40 400 C 80 550, 0 700, 30 850 C 60 1000, 30 1050, 30 1100" fill="none" stroke="#B99566" stroke-width="1.5" stroke-linecap="round"/>
+                
+                <g class="js-golden-node" transform="translate(35, 200)">
+                    <circle r="6" stroke="#B99566" fill="#F9F8F6" stroke-width="1.5"/>
+                    <circle r="2.5" fill="#B99566"/>
+                    <text x="15" y="4" fill="#6B5437" font-size="10" letter-spacing="0.2em" font-weight="600">PELE</text>
+                </g>
+                <g class="js-golden-node" transform="translate(40, 500)">
+                    <circle r="6" stroke="#B99566" fill="#F9F8F6" stroke-width="1.5"/>
+                    <circle r="2.5" fill="#B99566"/>
+                    <text x="15" y="4" fill="#6B5437" font-size="10" letter-spacing="0.2em" font-weight="600">SOBRANCELHAS</text>
+                </g>
+                <g class="js-golden-node" transform="translate(25, 800)">
+                    <circle r="6" stroke="#B99566" fill="#F9F8F6" stroke-width="1.5"/>
+                    <circle r="2.5" fill="#B99566"/>
+                    <text x="15" y="4" fill="#6B5437" font-size="10" letter-spacing="0.2em" font-weight="600">CUIDADO</text>
+                </g>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-20 w-full">
+            <!-- Texto de Fundo (Watermark) -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none -z-10 select-none hidden lg:block opacity-20">
+                <span class="font-serif text-[16vw] text-nude-200 font-bold tracking-tight">FIGUEIRA</span>
+            </div>
+
+            <!-- Grid de Conteúdo -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pl-8 md:pl-0">
+                
+                <!-- Coluna Esquerda: Títulos -->
+                <div class="md:col-span-6">
+                    <div class="inline-flex items-center gap-4 mb-6">
+                        <span class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-escuro-900 font-semibold js-anim-sobre-up">SOBRE O STUDIO</span>
+                        <div class="w-12 h-[1px] bg-nude-500/50 js-anim-sobre-up"></div>
+                    </div>
+                    
+                    <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-escuro-900 leading-[1.2] mb-4">
+                        <span class="block js-anim-sobre-up">Cuidado que valoriza</span>
+                        <span class="block italic text-nude-500 font-light mt-1 js-anim-sobre-up">o que existe de único em você</span>
+                    </h2>
+                </div>
+
+                <!-- Espaço Central para a Linha no Desktop -->
+                <div class="hidden md:block md:col-span-1"></div>
+
+                <!-- Coluna Direita: Textos -->
+                <div class="md:col-span-5 mt-6 md:mt-0">
+                    <div class="space-y-6 md:space-y-8 text-escuro-600 leading-relaxed text-sm md:text-base font-light">
+                        <p class="js-anim-sobre-up">No Studio Figueira, cada atendimento começa pela atenção às necessidades e características de cada cliente.</p>
+                        <p class="js-anim-sobre-up">Em um espaço reservado no Centro de Manaus, oferecemos uma experiência próxima, cuidadosa e personalizada.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Experiência (Jornada Editorial) -->
+    <section id="experiencia" class="scroll-mt-24 py-24 md:py-32 bg-[#F7F4EF] relative overflow-hidden flex flex-col min-h-screen">
+        
+        <!-- Background SVG -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-10 flex justify-center" aria-hidden="true">
+            <div class="w-full h-full max-w-[1000px] relative">
+                <!-- Desktop SVG -->
+                <svg class="w-full h-full hidden md:block opacity-0 md:opacity-100 transition-opacity" preserveAspectRatio="none" viewBox="0 0 100 100">
+                    <!-- Começa em X=52, que equivale ao centro + 20px, alinhado perfeitamente com a saída da seção anterior -->
+                    <path class="js-golden-path-exp" d="M 52 0 C 52 10, 42 15, 42 25 C 42 35, 55 40, 55 50 C 55 60, 40 65, 40 75 C 40 85, 50 87, 50 90 C 50 95, 52 98, 52 100" fill="none" stroke="#B99566" stroke-width="0.2" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Mobile SVG (Alinhado via container CSS para combinar com o X=30px do SVG mobile anterior) -->
+        <div class="absolute inset-0 md:hidden pointer-events-none z-10 w-[2px] left-[30px]" aria-hidden="true">
+            <svg class="w-full h-full overflow-visible opacity-100 transition-opacity" preserveAspectRatio="none" viewBox="0 0 10 100">
+                <path class="js-golden-path-exp" d="M 5 0 C 5 20, -5 25, 5 35 C 15 45, -5 50, 5 60 C 15 70, -5 75, 5 85 C 15 95, 5 98, 5 100" fill="none" stroke="#B99566" stroke-width="1.5" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+        <!-- Watermark -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none z-0 select-none js-anim-parallax">
+            <span class="font-serif text-[18vw] text-[#EDE7DE]/40 font-bold tracking-tight">EXPERIÊNCIA</span>
+        </div>
+
+        <!-- Content -->
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-20 w-full flex-1 flex flex-col">
+            <!-- Header -->
+            <div class="mt-8 mb-16 md:mb-0 md:w-5/12">
+                <div class="inline-flex items-center gap-4 mb-6 overflow-hidden">
+                    <span class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-[#171512] font-semibold js-anim-exp-header">NOSSA ESSÊNCIA</span>
+                    <div class="w-12 h-[1px] bg-[#B99566]/50 js-anim-exp-header-line origin-left scale-x-0"></div>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-[#171512] leading-[1.2]">
+                    <span class="block js-anim-exp-header">Uma experiência pensada</span>
+                    <span class="block italic text-[#B99566] font-light mt-1 js-anim-exp-header">em cada detalhe</span>
+                </h2>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="max-w-[1000px] mx-auto w-full relative z-20 flex-1 min-h-[800px] flex flex-col md:block mt-12 md:mt-0">
+                
+                <!-- Node 1 (Right) -->
+                <div class="relative md:absolute md:top-[25%] md:-translate-y-1/2 md:left-[42%] md:w-[58%] w-full flex items-center group mb-12 md:mb-0 js-anim-exp-pilar">
+                    <div class="absolute left-[30px] md:left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[40px] h-[40px] rounded-full border-[1.5px] border-[#B99566] bg-[#F7F4EF] flex items-center justify-center z-10 js-anim-exp-node">
+                        <div class="w-[5px] h-[5px] bg-[#B99566] rounded-full js-anim-exp-node-dot"></div>
+                        <span class="absolute -top-[22px] text-[10px] font-semibold text-[#171512] tracking-widest bg-[#F7F4EF] px-1">01</span>
+                    </div>
+                    <div class="pl-[70px] md:pl-16 w-full relative">
+                        <div class="absolute -top-10 md:-top-16 left-[70px] md:left-16 text-[80px] md:text-[120px] font-serif italic text-[#EDE7DE]/60 select-none -z-10 js-anim-parallax-num">01</div>
+                        <div class="w-8 h-8 mb-5 text-[#B99566] js-anim-exp-icon">
+                            <!-- Leaf/Skin Icon -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2C7 2 3 6 3 11c0 2 1 4 2.5 5.5l5 5.5a2 2 0 0 0 3 0l5-5.5C20 15 21 13 21 11c0-5-4-9-9-9z"/>
+                                <path d="M12 22V11"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-2xl md:text-3xl text-[#171512] mb-3 js-anim-exp-text">Estética facial em Manaus</h3>
+                        <p class="text-[#55504A] font-light leading-relaxed text-sm md:text-base max-w-sm js-anim-exp-text">Cuidados faciais direcionados às necessidades e características de cada pele, com foco em bem-estar e atenção individual.</p>
+                    </div>
+                </div>
+
+                <!-- Node 2 (Left) -->
+                <div class="relative md:absolute md:top-[50%] md:-translate-y-1/2 md:right-[45%] md:w-[55%] w-full flex items-center justify-start md:justify-end group mb-12 md:mb-0 js-anim-exp-pilar">
+                    <div class="absolute left-[30px] md:left-auto md:right-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:translate-x-1/2 w-[40px] h-[40px] rounded-full border-[1.5px] border-[#B99566] bg-[#F7F4EF] flex items-center justify-center z-10 js-anim-exp-node">
+                        <div class="w-[5px] h-[5px] bg-[#B99566] rounded-full js-anim-exp-node-dot"></div>
+                        <span class="absolute -top-[22px] text-[10px] font-semibold text-[#171512] tracking-widest bg-[#F7F4EF] px-1">02</span>
+                    </div>
+                    <div class="pl-[70px] md:pl-0 md:pr-16 w-full relative md:text-right flex flex-col md:items-end">
+                        <div class="absolute -top-10 md:-top-16 left-[70px] md:left-auto md:right-16 text-[80px] md:text-[120px] font-serif italic text-[#EDE7DE]/60 select-none -z-10 js-anim-parallax-num">02</div>
+                        <div class="w-8 h-8 mb-5 text-[#B99566] js-anim-exp-icon">
+                            <!-- Eye Icon -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-2xl md:text-3xl text-[#171512] mb-3 js-anim-exp-text">Sobrancelhas</h3>
+                        <p class="text-[#55504A] font-light leading-relaxed text-sm md:text-base max-w-sm js-anim-exp-text">Procedimentos voltados à valorização do olhar e à harmonia dos traços naturais.</p>
+                    </div>
+                </div>
+                
+                <!-- Node 3 (Right) -->
+                <div class="relative md:absolute md:top-[75%] md:-translate-y-1/2 md:left-[40%] md:w-[60%] w-full flex items-center group mb-12 md:mb-0 js-anim-exp-pilar">
+                    <div class="absolute left-[30px] md:left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[40px] h-[40px] rounded-full border-[1.5px] border-[#B99566] bg-[#F7F4EF] flex items-center justify-center z-10 js-anim-exp-node">
+                        <div class="w-[5px] h-[5px] bg-[#B99566] rounded-full js-anim-exp-node-dot"></div>
+                        <span class="absolute -top-[22px] text-[10px] font-semibold text-[#171512] tracking-widest bg-[#F7F4EF] px-1">03</span>
+                    </div>
+                    <div class="pl-[70px] md:pl-16 w-full relative">
+                        <div class="absolute -top-10 md:-top-16 left-[70px] md:left-16 text-[80px] md:text-[120px] font-serif italic text-[#EDE7DE]/60 select-none -z-10 js-anim-parallax-num">03</div>
+                        <div class="w-8 h-8 mb-5 text-[#B99566] js-anim-exp-icon">
+                            <!-- Clock Icon -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-2xl md:text-3xl text-[#171512] mb-3 js-anim-exp-text">Atendimento único</h3>
+                        <p class="text-[#55504A] font-light leading-relaxed text-sm md:text-base max-w-sm js-anim-exp-text">Realizado com horário agendado para oferecer mais organização, conforto e atenção exclusiva a você.</p>
+                    </div>
+                </div>
+
+                <!-- Node 4 (Left) -->
+                <div class="relative md:absolute md:top-[90%] md:-translate-y-1/2 md:right-[50%] md:w-[50%] w-full flex items-center justify-start md:justify-end group mb-12 md:mb-0 js-anim-exp-pilar">
+                    <div class="absolute left-[30px] md:left-auto md:right-0 top-1/2 -translate-y-1/2 -translate-x-1/2 md:translate-x-1/2 w-[40px] h-[40px] rounded-full border-[1.5px] border-[#B99566] bg-[#F7F4EF] flex items-center justify-center z-10 js-anim-exp-node">
+                        <div class="w-[5px] h-[5px] bg-[#B99566] rounded-full js-anim-exp-node-dot"></div>
+                        <span class="absolute -top-[22px] text-[10px] font-semibold text-[#171512] tracking-widest bg-[#F7F4EF] px-1">04</span>
+                    </div>
+                    <div class="pl-[70px] md:pl-0 md:pr-16 w-full relative md:text-right flex flex-col md:items-end">
+                        <div class="absolute -top-10 md:-top-16 left-[70px] md:left-auto md:right-16 text-[80px] md:text-[120px] font-serif italic text-[#EDE7DE]/60 select-none -z-10 js-anim-parallax-num">04</div>
+                        <div class="w-8 h-8 mb-5 text-[#B99566] js-anim-exp-icon">
+                            <!-- Location Pin Icon -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-2xl md:text-3xl text-[#171512] mb-3 js-anim-exp-text">Localização central</h3>
+                        <p class="text-[#55504A] font-light leading-relaxed text-sm md:text-base max-w-sm js-anim-exp-text">Edifício Rio Negro Center,<br>no Centro de Manaus.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Serviços com Journey Line -->
+    <section class="scroll-mt-24 py-32 md:py-40 bg-nude-50 relative" id="servicos-section">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+            
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 gsap-fade">
+                <div class="max-w-2xl bg-nude-50/80 backdrop-blur-sm p-4 -ml-4 rounded-2xl">
+                    <h2 class="font-serif text-4xl md:text-5xl text-escuro-900 mb-6">Cuidados para a pele <br>e para a sua beleza</h2>
+                    <p class="text-escuro-600 font-light leading-relaxed text-lg">
+                        Se você procura limpeza de pele, dermaplaning, design de sobrancelhas ou remoção de sinais, conheça nossos serviços.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Container Relativo para os Cards e para a Linha SVG -->
+            <div class="relative" id="servicos-journey">
+                
+                <!-- SVG Journey Line -->
+                <svg class="absolute top-0 bottom-0 left-[24px] md:left-1/2 w-[4px] md:-translate-x-1/2 h-full z-0 pointer-events-none" viewBox="0 0 4 100" preserveAspectRatio="none">
+                    <!-- Trilha pontilhada de fundo -->
+                    <path d="M 2 0 L 2 100" stroke="#E8DFD3" stroke-width="2" stroke-dasharray="1 1" vector-effect="non-scaling-stroke" />
+                    <!-- Linha animada principal -->
+                    <path class="journey-svg-line" d="M 2 0 L 2 100" stroke="#C2A379" stroke-width="3" stroke-linecap="round" fill="none" vector-effect="non-scaling-stroke" stroke-dasharray="100" stroke-dashoffset="100" />
+                </svg>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-24 relative z-10">
+                    
+                    <!-- Serviço 1 (Esquerda) -->
+                    <div class="group relative bg-white p-10 md:p-12 rounded-[2rem] border border-nude-200/50 hover:shadow-glass transition-all duration-700 hover:-translate-y-2 flex flex-col justify-between gsap-stagger-2 mt-0">
+                        <!-- Ponto conector visual (desktop) -->
+                        <div class="hidden md:block absolute top-1/2 -right-8 w-4 h-4 bg-nude-500 rounded-full border-4 border-nude-50 shadow-[0_0_15px_rgba(194,163,121,0.5)] transform -translate-y-1/2 z-20"></div>
+                        
+                        <div class="mb-12">
+                            <span class="text-nude-500 font-serif italic text-xl mb-4 block">01.</span>
+                            <h3 class="font-serif text-3xl text-escuro-900 mb-6">Limpeza de pele</h3>
+                            <p class="text-escuro-600 font-light leading-relaxed">Cuidado facial voltado à higienização e à manutenção da aparência saudável da pele. O atendimento deve considerar as características e necessidades individuais de cada cliente.</p>
+                        </div>
+                        <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="inline-flex items-center gap-4 text-escuro-900 font-semibold uppercase tracking-widest text-[10px] group-hover:text-nude-500 transition-colors">
+                            <span class="border-b border-escuro-900/20 group-hover:border-nude-500 pb-1 transition-colors">Quero agendar</span> 
+                            <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- Serviço 2 (Direita - Deslocado para baixo) -->
+                    <div class="group relative bg-white p-10 md:p-12 rounded-[2rem] border border-nude-200/50 hover:shadow-glass transition-all duration-700 hover:-translate-y-2 flex flex-col justify-between gsap-stagger-2 mt-0 md:mt-32">
+                        <!-- Ponto conector visual (desktop) -->
+                        <div class="hidden md:block absolute top-1/2 -left-8 w-4 h-4 bg-nude-500 rounded-full border-4 border-nude-50 shadow-[0_0_15px_rgba(194,163,121,0.5)] transform -translate-y-1/2 z-20"></div>
+
+                        <div class="mb-12">
+                            <span class="text-nude-500 font-serif italic text-xl mb-4 block">02.</span>
+                            <h3 class="font-serif text-3xl text-escuro-900 mb-6">Dermaplaning</h3>
+                            <p class="text-escuro-600 font-light leading-relaxed">Procedimento de cuidado facial direcionado à renovação superficial e à melhora da aparência e da textura da pele.</p>
+                        </div>
+                        <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="inline-flex items-center gap-4 text-escuro-900 font-semibold uppercase tracking-widest text-[10px] group-hover:text-nude-500 transition-colors">
+                            <span class="border-b border-escuro-900/20 group-hover:border-nude-500 pb-1 transition-colors">Quero conhecer</span> 
+                            <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- Serviço 3 (Esquerda) -->
+                    <div class="group relative bg-white p-10 md:p-12 rounded-[2rem] border border-nude-200/50 hover:shadow-glass transition-all duration-700 hover:-translate-y-2 flex flex-col justify-between gsap-stagger-2 mt-0 md:-mt-16">
+                        <!-- Ponto conector visual (desktop) -->
+                        <div class="hidden md:block absolute top-1/2 -right-8 w-4 h-4 bg-nude-500 rounded-full border-4 border-nude-50 shadow-[0_0_15px_rgba(194,163,121,0.5)] transform -translate-y-1/2 z-20"></div>
+
+                        <div class="mb-12">
+                            <span class="text-nude-500 font-serif italic text-xl mb-4 block">03.</span>
+                            <h3 class="font-serif text-3xl text-escuro-900 mb-6">Design de sobrancelhas</h3>
+                            <p class="text-escuro-600 font-light leading-relaxed">Atendimento pensado para valorizar o olhar, respeitando o formato do rosto, os traços naturais e as preferências de cada cliente.</p>
+                        </div>
+                        <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="inline-flex items-center gap-4 text-escuro-900 font-semibold uppercase tracking-widest text-[10px] group-hover:text-nude-500 transition-colors">
+                            <span class="border-b border-escuro-900/20 group-hover:border-nude-500 pb-1 transition-colors">Quero cuidar do meu olhar</span> 
+                            <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- Serviço 4 (Direita - Deslocado para baixo) -->
+                    <div class="group relative bg-white p-10 md:p-12 rounded-[2rem] border border-nude-200/50 hover:shadow-glass transition-all duration-700 hover:-translate-y-2 flex flex-col justify-between gsap-stagger-2 mt-0 md:mt-16">
+                        <!-- Ponto conector visual (desktop) -->
+                        <div class="hidden md:block absolute top-1/2 -left-8 w-4 h-4 bg-nude-500 rounded-full border-4 border-nude-50 shadow-[0_0_15px_rgba(194,163,121,0.5)] transform -translate-y-1/2 z-20"></div>
+
+                        <div class="mb-12">
+                            <span class="text-nude-500 font-serif italic text-xl mb-4 block">04.</span>
+                            <h3 class="font-serif text-3xl text-escuro-900 mb-6">Remoção de sinais</h3>
+                            <p class="text-escuro-600 font-light leading-relaxed">Atendimento com avaliação individual para verificar o procedimento indicado para cada caso, garantindo segurança e eficácia.</p>
+                        </div>
+                        <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="inline-flex items-center gap-4 text-escuro-900 font-semibold uppercase tracking-widest text-[10px] group-hover:text-nude-500 transition-colors">
+                            <span class="border-b border-escuro-900/20 group-hover:border-nude-500 pb-1 transition-colors">Solicitar avaliação</span> 
+                            <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Box Técnico Minimalista -->
+            <div class="border-t border-b border-nude-200 py-12 gsap-fade relative z-10 bg-nude-50/80 backdrop-blur-sm">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="md:col-span-1">
+                        <h4 class="font-serif italic text-xl text-escuro-900">Credenciais &<br>Segurança</h4>
+                    </div>
+                    <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-sm text-escuro-600 font-light">
+                        <p><strong class="font-medium text-escuro-900">Nome responsável:</strong> [A CONFIRMAR]</p>
+                        <p><strong class="font-medium text-escuro-900">Formação:</strong> [A CONFIRMAR]</p>
+                        <p><strong class="font-medium text-escuro-900">Registro:</strong> [A CONFIRMAR]</p>
+                        <p><strong class="font-medium text-escuro-900">Método:</strong> [A CONFIRMAR]</p>
+                        <p class="sm:col-span-2"><strong class="font-medium text-escuro-900">Indicações e contraindicações:</strong> [A CONFIRMAR]</p>
+                        <p class="sm:col-span-2 text-xs text-escuro-600/60 mt-4">* Para casos que precisam de avaliação dermatológica, sempre consulte um especialista prévio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Autoridade e Galeria Editorial -->
+    <section class="py-32 md:py-48 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <!-- Abertura Autoridade -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-32">
+                <div class="lg:col-span-5 gsap-fade">
+                    <h2 class="font-serif text-4xl md:text-5xl text-escuro-900 mb-8 leading-tight">Conheça quem cuidará <span class="italic text-nude-500">de você</span></h2>
+                    
+                    <div class="space-y-3 text-sm text-escuro-600 font-light mb-10 border-l border-nude-200 pl-6">
+                        <p><strong class="font-medium text-escuro-900">Profissional:</strong> [A CONFIRMAR]</p>
+                        <p><strong class="font-medium text-escuro-900">Especializações:</strong> [A CONFIRMAR]</p>
+                        <p><strong class="font-medium text-escuro-900">Atuação:</strong> [A CONFIRMAR]</p>
+                        <p><strong class="font-medium text-escuro-900">Experiência Remoção:</strong> [A CONFIRMAR]</p>
+                    </div>
+                    
+                    <a href="https://www.instagram.com/studiofigueira_esteticafacial/#" target="_blank" class="inline-flex items-center gap-3 text-escuro-900 hover:text-nude-500 transition font-semibold uppercase tracking-widest text-[11px] bg-nude-50 px-6 py-3 rounded-full border border-nude-200">
+                        <i class="fa-brands fa-instagram text-lg"></i> Instagram Oficial
+                    </a>
+                </div>
+
+                <!-- Foto com Frame Asimétrico -->
+                <div class="lg:col-span-7 relative gsap-fade">
+                    <div class="absolute -inset-4 bg-nude-100 rounded-[2rem] transform rotate-3 -z-10"></div>
+                    <div class="relative rounded-[2rem] overflow-hidden aspect-[4/3] shadow-float">
+                        <img src="assets/profissionais.jpg" alt="Profissionais" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galeria / Presença Digital (Layout Masonry-ish / Camadas) -->
+            <div class="pt-20 border-t border-nude-200">
+                <div class="text-center mb-16 gsap-fade">
+                    <h3 class="font-serif text-3xl text-escuro-900">Beleza real, resultados reais</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 gsap-fade">
+                    <div class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-nude-100 mt-0 md:mt-12 shadow-md">
+                        <img src="assets/sobrancelha.jpg" alt="Sobrancelha" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105 group-hover:rotate-1">
+                    </div>
+                    <div class="group relative aspect-[3/4] rounded-[2rem] overflow-hidden bg-nude-100 shadow-md">
+                        <img src="assets/limpeza.jpg" alt="Estética Facial" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105 group-hover:-rotate-1">
+                    </div>
+                    <div class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-nude-100 mt-0 md:mt-16 shadow-md">
+                        <img src="assets/labios.jpg" alt="Lábios" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105 group-hover:rotate-1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer CTA (Dark Tech Minimalist) -->
+    <section id="contato" class="scroll-mt-24 py-32 bg-escuro-900 text-center relative overflow-hidden">
+        
+        <div class="max-w-3xl mx-auto px-6 relative z-10 gsap-fade">
+            <h2 class="font-serif text-4xl md:text-6xl text-white mb-6 leading-tight">Reserve um momento <br><span class="italic text-nude-500">para você</span></h2>
+            <p class="text-nude-100/60 mb-12 text-lg font-light">Agende seu atendimento e descubra os cuidados disponíveis para a sua pele.</p>
+            
+            <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="group relative inline-flex items-center justify-center gap-4 bg-nude-500 text-white px-12 py-5 rounded-full overflow-hidden transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_40px_rgba(194,163,121,0.2)]">
+                <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-nude-500 to-nude-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                <i class="fa-brands fa-whatsapp text-2xl relative z-10"></i> 
+                <span class="uppercase tracking-[0.15em] text-[11px] font-semibold relative z-10">Agendar pelo WhatsApp</span>
+            </a>
+
+            <!-- Info Bar -->
+            <div class="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-center gap-8 md:gap-16 text-[11px] uppercase tracking-widest text-nude-100/40">
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-map-pin"></i> Rio Negro Center
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-clock"></i> Apenas Agendado
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> [NÚMERO]
+                </div>
+            </div>
+            
+            <p class="mt-8 text-[10px] text-white/20 uppercase tracking-widest">* Aceitamos Crediário Bemol e Avancard</p>
+        </div>
+    </section>
+
+    <!-- Footer base -->
+    <footer class="bg-black text-white/20 py-8 text-center text-[10px] uppercase tracking-[0.2em] font-light">
+        <p>&copy; 2026 Studio Figueira.</p>
+    </footer>
+
+    <!-- Scripts GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animação Hero - Layers textuais
+        const tlHero = gsap.timeline({ defaults: { ease: "power4.out" } });
+        tlHero.fromTo(".gsap-hero > *", 
+            { opacity: 0, y: 30 }, 
+            { opacity: 1, y: 0, duration: 1.2, stagger: 0.1, delay: 0.2 }
+        );
+        tlHero.fromTo(".gsap-hero-card", 
+            { opacity: 0, x: 30 }, 
+            { opacity: 1, x: 0, duration: 1.5 },
+            "-=1"
+        );
+
+        // Efeito Parallax Otimizado
+        gsap.to("#hero-bg", {
+            y: "15%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".bg-escuro-900",
+                start: "top top",
+                end: "bottom top",
+                scrub: 1 // Scrub com pequeno delay para suavidade (taste-skill)
+            }
+        });
+
+        // Fades globais
+        gsap.utils.toArray('.gsap-fade').forEach((elem) => {
+            gsap.fromTo(elem, 
+                { opacity: 0, y: 30 },
+                {
+                    scrollTrigger: { trigger: elem, start: "top 90%" },
+                    opacity: 1, y: 0, duration: 1.0, ease: "power3.out"
+                }
+            );
+        });
+
+        // Stagger Bento Grid
+        gsap.fromTo(".gsap-stagger", 
+            { opacity: 0, y: 40 },
+            {
+                scrollTrigger: { trigger: ".gsap-stagger", start: "top 80%" },
+                opacity: 1, y: 0, duration: 1, stagger: 0.1, ease: "power3.out"
+            }
+        );
+
+        // Cards de Serviços (Cuidados para pele)
+        gsap.utils.toArray('.gsap-stagger-2').forEach((elem) => {
+            gsap.fromTo(elem, 
+                { opacity: 0, y: 40 },
+                {
+                    scrollTrigger: { trigger: elem, start: "top 90%" }, // Aparece mais cedo
+                    opacity: 1, y: 0, duration: 0.8, ease: "power3.out" // Animação um pouco mais ágil
+                }
+            );
+        });
+
+        // SVG Scroll Journey Line (Desenha conforme o usuário desce)
+        gsap.to(".journey-svg-line", {
+            strokeDashoffset: 0,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#servicos-journey",
+                start: "top 60%", // Começa a desenhar quando o container chega a 60% da tela
+                end: "bottom 80%", // Termina de desenhar quando o fim chega a 80%
+                scrub: 1.5 // Suavização (delay de 1.5s na física da linha)
+            }
+        });
+
+        // --- NOVA ANIMAÇÃO: Fio Dourado Contínuo (Sobre o Studio) ---
+        const prepareSVGPath = (selector) => {
+            const paths = document.querySelectorAll(selector);
+            paths.forEach(path => {
+                const length = path.getTotalLength();
+                if (length > 0) {
+                    path.style.strokeDasharray = length;
+                    path.style.strokeDashoffset = length;
+                    gsap.to(path, {
+                        strokeDashoffset: 0,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: "#sobre",
+                            start: "top 65%",
+                            end: "bottom 20%",
+                            scrub: 1.2
+                        }
+                    });
+                }
+            });
+        };
+
+        // Roda as animações de SVG
+        prepareSVGPath("#sobre .js-golden-path");
+
+        // --- Hero to Sobre Transition (Crossfade Scrub) ---
+        const mmTransition = gsap.matchMedia();
+        mmTransition.add("(prefers-reduced-motion: no-preference)", () => {
+            const heroSection = document.getElementById("hero-section");
+            
+            // Setup thread in hero
+            const threadHero = document.querySelectorAll(".js-golden-path-hero");
+            threadHero.forEach(path => {
+                const length = path.getTotalLength();
+                gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
+            });
+            gsap.set(".js-anim-hero-thread", { opacity: 1 });
+
+            // Unified scrub timeline
+            const tlTransition = gsap.timeline({
+                scrollTrigger: {
+                    trigger: heroSection,
+                    start: "90% bottom", // When bottom of hero reaches 90% of viewport
+                    end: "bottom 45%",  // When bottom of hero reaches 45% of viewport
+                    scrub: 0.8
+                }
+            });
+
+            // Parallax max distances
+            tlTransition
+                // Bg slight parallax
+                .to(".js-anim-hero-bg", { y: 10, ease: "none" }, 0)
+                // Photos slight parallax, min opacity 0.55
+                .to(".js-anim-hero-photo", { y: 16, opacity: 0.55, ease: "none" }, 0)
+                // Content fade and move up max 12px
+                .to(".js-anim-hero-content", { y: -12, opacity: 0.55, ease: "none" }, 0)
+                // Draw the hero thread piece
+                .to(threadHero, { strokeDashoffset: 0, ease: "none" }, 0)
+                // Next section title/content fade in
+                .fromTo(".js-anim-sobre-up", 
+                    { opacity: 0, y: 24 }, 
+                    { opacity: 1, y: 0, stagger: 0.05, ease: "none" }, 
+                0.2); // Start slightly after the background begins fading
+        });
+
+        // Nodes
+        const nodes = gsap.utils.toArray('#sobre .js-golden-node');
+        nodes.forEach((node, i) => {
+            gsap.fromTo(node, 
+                { opacity: 0, scale: 0.5, transformOrigin: "center" }, 
+                { 
+                    opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.5)",
+                    scrollTrigger: {
+                        trigger: "#sobre",
+                        start: () => `top ${60 - ((i % 3) * 15)}%`,
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+
+        // --- NOVA ANIMAÇÃO: Jornada Editorial (Experiência) ---
+        
+        // 1. Linha SVG desenhada com Scroll
+        const pathsExp = document.querySelectorAll(".js-golden-path-exp");
+        pathsExp.forEach(path => {
+            const length = path.getTotalLength();
+            if (length > 0) {
+                path.style.strokeDasharray = length;
+                path.style.strokeDashoffset = length;
+                gsap.to(path, {
+                    strokeDashoffset: 0,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "#experiencia",
+                        start: "top 75%",
+                        end: "bottom 25%",
+                        scrub: 0.8
+                    }
+                });
+            }
+        });
+
+        // 2. Cabeçalho da seção
+        const tlHeaderExp = gsap.timeline({
+            scrollTrigger: { trigger: "#experiencia", start: "top 75%" }
+        });
+        tlHeaderExp.fromTo(".js-anim-exp-header", 
+            { opacity: 0, y: 20 }, 
+            { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power2.out" }
+        , 0);
+        tlHeaderExp.to(".js-anim-exp-header-line", { scaleX: 1, duration: 0.8, ease: "power2.out" }, 0.2);
+
+        // 3. Pilares progressivos
+        const pilares = gsap.utils.toArray('.js-anim-exp-pilar');
+        pilares.forEach((pilar) => {
+            const num = pilar.querySelector('.js-anim-parallax-num');
+            const node = pilar.querySelector('.js-anim-exp-node');
+            const icon = pilar.querySelector('.js-anim-exp-icon');
+            const texts = pilar.querySelectorAll('.js-anim-exp-text');
+            
+            const tlPilar = gsap.timeline({
+                scrollTrigger: {
+                    trigger: pilar,
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // Número gigante de fundo (Fade-in sutil)
+            if (num) {
+                tlPilar.fromTo(num, { opacity: 0 }, { opacity: 1, duration: 1, ease: "power2.out" }, 0);
+                
+                // Parallax suave (movimento vertical de 12px)
+                gsap.to(num, {
+                    y: -12,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: pilar,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+            }
+
+            // Ponto da linha (cresce de 0.8)
+            if (node) {
+                tlPilar.fromTo(node, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, 0.1);
+            }
+
+            // Ícone (Aparição delicada)
+            if (icon) {
+                tlPilar.fromTo(icon, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, 0.3);
+            }
+
+            // Título e Descrição (Deslocamento max 24px)
+            if (texts.length > 0) {
+                // Determina se o texto entra da esquerda ou direita baseado na posição visual
+                const isLeftAligned = pilar.classList.contains('justify-start');
+                const xOffset = isLeftAligned ? -20 : 20;
+
+                tlPilar.fromTo(texts, 
+                    { opacity: 0, y: 24, x: xOffset }, 
+                    { opacity: 1, y: 0, x: 0, duration: 0.8, stagger: 0.15, ease: "power2.out" }, 
+                0.4);
+            }
+        });
+
+        // 4. Parallax sutil da palavra "EXPERIÊNCIA"
+        gsap.to(".js-anim-parallax", {
+            y: -30,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#experiencia",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // --- Header Premium & Navigation Logic ---
+        
+        // 1. Initial Entrance Animation
+        const mmHeader = gsap.matchMedia();
+        mmHeader.add("(prefers-reduced-motion: no-preference)", () => {
+            const tlHeader = gsap.timeline({ delay: 0.1 });
+            
+            // Set initial state (fallback is visible in CSS, we hide it here if JS works)
+            gsap.set(".site-header", { opacity: 0, y: -12 });
+            
+            tlHeader.to(".site-header", { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" })
+                    .from(".js-anim-header-item", { opacity: 0, y: 10, duration: 0.6, stagger: 0.1, ease: "power2.out" }, "-=0.4")
+                    .to(".js-header-bottom-line", { scaleX: 1, duration: 0.8, ease: "power2.out" }, "-=0.4");
+        });
+
+        // 2. Scroll Logic (Glassmorphism & Shrink)
+        const header = document.getElementById("site-header");
+        const headerBg = document.querySelector(".js-header-bg");
+        const headerInner = document.querySelector(".js-header-inner");
+        const headerThread = document.querySelectorAll(".js-header-thread");
+        
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 40) {
+                header.classList.add("is-scrolled", "fixed");
+                header.classList.remove("absolute");
+                headerBg.classList.replace("opacity-0", "opacity-100");
+                headerInner.classList.replace("h-[88px]", "h-[72px]");
+                headerThread.forEach(el => el.classList.replace("opacity-0", "opacity-100"));
+            } else {
+                header.classList.remove("is-scrolled", "fixed");
+                header.classList.add("absolute");
+                headerBg.classList.replace("opacity-100", "opacity-0");
+                headerInner.classList.replace("h-[72px]", "h-[88px]");
+                headerThread.forEach(el => el.classList.replace("opacity-100", "opacity-0"));
+            }
+        });
+
+        // 3. Active Link State (Intersection Observer)
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".js-nav-link");
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: "-20% 0px -60% 0px", // Detect when section is visually in the upper middle
+            threshold: 0
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // --- Theme Switcher (Dark/Light backgrounds) ---
+                    const id = entry.target.id;
+                    if(id === "hero-section" || id === "contato") {
+                        header.classList.remove("is-light");
+                    } else {
+                        header.classList.add("is-light");
+                    }
+
+                    navLinks.forEach(link => {
+                        const indicator = link.querySelector(".js-nav-indicator");
+                        if (link.getAttribute("href") === `#${id}`) {
+                            link.classList.add("text-white", "is-active");
+                            link.classList.remove("text-[#F7F4EF]");
+                            indicator.classList.replace("w-0", "w-[40px]");
+                        } else {
+                            link.classList.remove("text-white", "is-active");
+                            link.classList.add("text-[#F7F4EF]");
+                            indicator.classList.replace("w-[40px]", "w-0");
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        sections.forEach(section => observer.observe(section));
+
+        // 4. Mobile Menu Toggle
+        const btnMobileMenu = document.getElementById("btn-mobile-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileLinks = document.querySelectorAll(".js-mobile-link");
+        const line1 = document.querySelector(".js-menu-line-1");
+        const line2 = document.querySelector(".js-menu-line-2");
+        let menuOpen = false;
+
+        const toggleMenu = () => {
+            menuOpen = !menuOpen;
+            btnMobileMenu.setAttribute("aria-expanded", menuOpen);
+            
+            if (menuOpen) {
+                mobileMenu.classList.replace("opacity-0", "opacity-100");
+                mobileMenu.classList.replace("pointer-events-none", "pointer-events-auto");
+                document.body.style.overflow = "hidden"; // Prevent background scroll
+                
+                // Cross animation
+                line1.classList.add("translate-y-[3.5px]", "rotate-45");
+                line2.classList.add("-translate-y-[3.5px]", "-rotate-45");
+                
+                // Animate links in
+                gsap.fromTo(mobileLinks, 
+                    { opacity: 0, y: 20 }, 
+                    { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, delay: 0.2, ease: "power2.out" }
+                );
+            } else {
+                mobileMenu.classList.replace("opacity-100", "opacity-0");
+                mobileMenu.classList.replace("pointer-events-auto", "pointer-events-none");
+                document.body.style.overflow = "";
+                
+                // Hamburger restore
+                line1.classList.remove("translate-y-[3.5px]", "rotate-45");
+                line2.classList.remove("-translate-y-[3.5px]", "-rotate-45");
+            }
+        };
+
+        btnMobileMenu.addEventListener("click", toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener("click", toggleMenu));
+        
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && menuOpen) {
+                toggleMenu();
+                btnMobileMenu.focus();
+            }
+        });
+    </script>
+</body>
+</html>
