@@ -813,27 +813,43 @@
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        // Animação Hero - Layers textuais
+        // Animação Hero - Layers textuais (Load da página)
         const tlHero = gsap.timeline({ defaults: { ease: "power4.out" } });
+        
+        // Revela textos principais do hero
         tlHero.fromTo(".gsap-hero > *", 
             { opacity: 0, y: 30 }, 
-            { opacity: 1, y: 0, duration: 1.2, stagger: 0.1, delay: 0.2 }
-        );
-        tlHero.fromTo(".gsap-hero-card", 
-            { opacity: 0, x: 30 }, 
-            { opacity: 1, x: 0, duration: 1.5 },
-            "-=1"
+            { opacity: 1, y: 0, duration: 1.5, stagger: 0.15, delay: 0.2 }
         );
 
-        // Efeito Parallax Otimizado
-        gsap.to("#hero-bg", {
+        // Revela as imagens com um fade sutil
+        tlHero.fromTo(".js-anim-hero-photo",
+            { opacity: 0, scale: 0.95 },
+            { opacity: 0.85, scale: 1, duration: 2, ease: "power2.out" },
+            "-=1.2"
+        );
+
+        // Efeito Parallax Otimizado (quando rola a página para baixo)
+        gsap.to(".js-anim-hero-bg", {
             y: "15%",
             ease: "none",
             scrollTrigger: {
-                trigger: ".bg-escuro-900",
+                trigger: "#hero-section",
                 start: "top top",
                 end: "bottom top",
-                scrub: 1 // Scrub com pequeno delay para suavidade (taste-skill)
+                scrub: 1
+            }
+        });
+
+        gsap.to(".gsap-hero", {
+            y: "30%",
+            opacity: 0,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#hero-section",
+                start: "top top",
+                end: "bottom top",
+                scrub: 1
             }
         });
 
@@ -913,12 +929,11 @@
         // Roda as animações de SVG
         prepareSVGPath("#sobre .js-golden-path");
 
-        // --- Hero to Sobre Transition (Crossfade Scrub) ---
+        // --- Hero to Sobre Transition (Fio Dourado e Fade Inicial) ---
         const mmTransition = gsap.matchMedia();
         mmTransition.add("(prefers-reduced-motion: no-preference)", () => {
             const heroSection = document.getElementById("hero-section");
             
-            // Setup thread in hero
             const threadHero = document.querySelectorAll(".js-golden-path-hero");
             threadHero.forEach(path => {
                 const length = path.getTotalLength();
@@ -926,31 +941,21 @@
             });
             gsap.set(".js-anim-hero-thread", { opacity: 1 });
 
-            // Unified scrub timeline
             const tlTransition = gsap.timeline({
                 scrollTrigger: {
                     trigger: heroSection,
-                    start: "90% bottom", // When bottom of hero reaches 90% of viewport
-                    end: "bottom 45%",  // When bottom of hero reaches 45% of viewport
+                    start: "bottom bottom",
+                    end: "bottom 30%",
                     scrub: 0.8
                 }
             });
 
-            // Parallax max distances
             tlTransition
-                // Bg slight parallax
-                .to(".js-anim-hero-bg", { y: 10, ease: "none" }, 0)
-                // Photos slight parallax, min opacity 0.55
-                .to(".js-anim-hero-photo", { y: 16, opacity: 0.55, ease: "none" }, 0)
-                // Content fade and move up max 12px
-                .to(".js-anim-hero-content", { y: -12, opacity: 0.55, ease: "none" }, 0)
-                // Draw the hero thread piece
                 .to(threadHero, { strokeDashoffset: 0, ease: "none" }, 0)
-                // Next section title/content fade in
                 .fromTo(".js-anim-sobre-up", 
                     { opacity: 0, y: 24 }, 
                     { opacity: 1, y: 0, stagger: 0.1, ease: "none" }, 
-                0.2); // Start slightly after the background begins fading
+                0);
         });
 
         // Nodes
