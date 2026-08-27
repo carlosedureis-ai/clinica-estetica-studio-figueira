@@ -1168,17 +1168,17 @@
 
             // Ponto pulsando (se houver)
             if (dot) {
-                tlCard.fromTo(dot, { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.4, ease: "back.out(1.5)" }, 0);
-                tlCard.fromTo(dot, { boxShadow: "0 0 0 rgba(194,163,121,0)" }, { boxShadow: "0 0 15px rgba(194,163,121,0.5)", duration: 0.6, ease: "power2.out" }, 0.2);
+                tlCard.fromTo(dot, { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.3, ease: "back.out(1.5)" }, 0);
+                tlCard.fromTo(dot, { boxShadow: "0 0 0 rgba(194,163,121,0)" }, { boxShadow: "0 0 15px rgba(194,163,121,0.5)", duration: 0.4, ease: "power2.out" }, 0.1);
             }
 
-            // Textos e elementos do card - mais rápidos e mais juntos
-            tlCard.fromTo(num, { autoAlpha: 0, x: -10 }, { autoAlpha: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.1);
-            tlCard.fromTo(icon, { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.5, ease: "back.out(1.5)" }, 0.2);
-            tlCard.fromTo(title, { autoAlpha: 0, y: 15 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.3);
-            tlCard.fromTo(desc, { autoAlpha: 0, y: 15 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.4);
-            tlCard.to(line, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 0.5);
-            tlCard.fromTo(btn, { autoAlpha: 0, scale: 0.8, x: -10 }, { autoAlpha: 1, scale: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.5);
+            // Textos e elementos do card - animação ultrarrápida para não sumir no scroll
+            tlCard.fromTo(num, { autoAlpha: 0, x: -10 }, { autoAlpha: 1, x: 0, duration: 0.3, ease: "power2.out" }, 0);
+            tlCard.fromTo(icon, { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(1.5)", clearProps: "transform" }, 0.05);
+            tlCard.fromTo(title, { autoAlpha: 0, y: 15 }, { autoAlpha: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0.1);
+            tlCard.fromTo(desc, { autoAlpha: 0, y: 15 }, { autoAlpha: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0.15);
+            tlCard.to(line, { scaleX: 1, duration: 0.3, ease: "power2.out" }, 0.2);
+            tlCard.fromTo(btn, { autoAlpha: 0, scale: 0.8, x: -10 }, { autoAlpha: 1, scale: 1, x: 0, duration: 0.3, ease: "power2.out" }, 0.2);
         });
 
         // --- NOVA ANIMAÇÃO: Flor Desabrochando & Autoridade ---
