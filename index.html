@@ -838,12 +838,20 @@
         });
 
         // Fades globais
-        gsap.utils.toArray('.gsap-fade').forEach((elem) => {
-            gsap.fromTo(elem, 
-                { opacity: 0, y: 30 },
-                {
-                    scrollTrigger: { trigger: elem, start: "top 90%" },
-                    opacity: 1, y: 0, duration: 1.0, ease: "power3.out"
+        const fadeElements = gsap.utils.toArray('.gsap-fade');
+        fadeElements.forEach((el) => {
+            gsap.fromTo(el, 
+                { opacity: 0, y: 30 }, 
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 1.2, 
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 90%",
+                        toggleActions: "play none none none"
+                    }
                 }
             );
         });
@@ -852,8 +860,8 @@
         gsap.fromTo(".gsap-stagger", 
             { opacity: 0, y: 40 },
             {
-                scrollTrigger: { trigger: ".gsap-stagger", start: "top 80%" },
-                opacity: 1, y: 0, duration: 1, stagger: 0.1, ease: "power3.out"
+                scrollTrigger: { trigger: ".gsap-stagger", start: "top 85%", toggleActions: "play none none none" },
+                opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: "power3.out"
             }
         );
 
@@ -862,8 +870,8 @@
             gsap.fromTo(elem, 
                 { opacity: 0, y: 40 },
                 {
-                    scrollTrigger: { trigger: elem, start: "top 90%" }, // Aparece mais cedo
-                    opacity: 1, y: 0, duration: 0.8, ease: "power3.out" // Animação um pouco mais ágil
+                    scrollTrigger: { trigger: elem, start: "top 90%", toggleActions: "play none none none" },
+                    opacity: 1, y: 0, duration: 0.8, ease: "power3.out"
                 }
             );
         });
@@ -941,7 +949,7 @@
                 // Next section title/content fade in
                 .fromTo(".js-anim-sobre-up", 
                     { opacity: 0, y: 24 }, 
-                    { opacity: 1, y: 0, stagger: 0.05, ease: "none" }, 
+                    { opacity: 1, y: 0, stagger: 0.1, ease: "none" }, 
                 0.2); // Start slightly after the background begins fading
         });
 
@@ -951,11 +959,11 @@
             gsap.fromTo(node, 
                 { opacity: 0, scale: 0.5, transformOrigin: "center" }, 
                 { 
-                    opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.5)",
+                    opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.5)",
                     scrollTrigger: {
                         trigger: "#sobre",
-                        start: () => `top ${60 - ((i % 3) * 15)}%`,
-                        toggleActions: "play none none reverse"
+                        start: () => `top ${70 - ((i % 3) * 10)}%`,
+                        toggleActions: "play none none none"
                     }
                 }
             );
@@ -985,7 +993,7 @@
 
         // 2. Cabeçalho da seção
         const tlHeaderExp = gsap.timeline({
-            scrollTrigger: { trigger: "#experiencia", start: "top 75%" }
+            scrollTrigger: { trigger: "#experiencia", start: "top 85%" }
         });
         tlHeaderExp.fromTo(".js-anim-exp-header", 
             { opacity: 0, y: 20 }, 
@@ -1004,14 +1012,14 @@
             const tlPilar = gsap.timeline({
                 scrollTrigger: {
                     trigger: pilar,
-                    start: "top 70%",
-                    toggleActions: "play none none reverse"
+                    start: "top 85%", // Mais cedo para acompanhar melhor
+                    toggleActions: "play none none none"
                 }
             });
 
             // Número gigante de fundo (Fade-in sutil)
             if (num) {
-                tlPilar.fromTo(num, { opacity: 0 }, { opacity: 1, duration: 1, ease: "power2.out" }, 0);
+                tlPilar.fromTo(num, { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "power2.out" }, 0);
                 
                 // Parallax suave (movimento vertical de 12px)
                 gsap.to(num, {
@@ -1033,7 +1041,7 @@
 
             // Ícone (Aparição delicada)
             if (icon) {
-                tlPilar.fromTo(icon, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, 0.3);
+                tlPilar.fromTo(icon, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }, 0.2);
             }
 
             // Título e Descrição (Deslocamento max 24px)
@@ -1045,7 +1053,7 @@
                 tlPilar.fromTo(texts, 
                     { opacity: 0, y: 24, x: xOffset }, 
                     { opacity: 1, y: 0, x: 0, duration: 0.8, stagger: 0.15, ease: "power2.out" }, 
-                0.4);
+                0.3);
             }
         });
 
@@ -1114,17 +1122,17 @@
 
             // Ponto pulsando (se houver)
             if (dot) {
-                tlCard.fromTo(dot, { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.3, ease: "back.out(1.5)" }, 0);
-                tlCard.fromTo(dot, { boxShadow: "0 0 0 rgba(194,163,121,0)" }, { boxShadow: "0 0 15px rgba(194,163,121,0.5)", duration: 0.4, ease: "power2.out" }, 0.1);
+                tlCard.fromTo(dot, { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.6, ease: "back.out(1.5)" }, 0);
+                tlCard.fromTo(dot, { boxShadow: "0 0 0 rgba(194,163,121,0)" }, { boxShadow: "0 0 15px rgba(194,163,121,0.5)", duration: 0.8, ease: "power2.out" }, 0.2);
             }
 
-            // Textos e elementos do card - animação ultrarrápida para não sumir no scroll
-            tlCard.fromTo(num, { autoAlpha: 0, x: -10 }, { autoAlpha: 1, x: 0, duration: 0.3, ease: "power2.out" }, 0);
-            tlCard.fromTo(icon, { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(1.5)", clearProps: "transform" }, 0.05);
-            tlCard.fromTo(title, { autoAlpha: 0, y: 15 }, { autoAlpha: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0.1);
-            tlCard.fromTo(desc, { autoAlpha: 0, y: 15 }, { autoAlpha: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0.15);
-            tlCard.to(line, { scaleX: 1, duration: 0.3, ease: "power2.out" }, 0.2);
-            tlCard.fromTo(btn, { autoAlpha: 0, scale: 0.8, x: -10 }, { autoAlpha: 1, scale: 1, x: 0, duration: 0.3, ease: "power2.out" }, 0.2);
+            // Textos e elementos do card - fluido e acompanhável
+            tlCard.fromTo(num, { autoAlpha: 0, x: -10 }, { autoAlpha: 1, x: 0, duration: 0.6, ease: "power2.out" }, 0);
+            tlCard.fromTo(icon, { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.6, ease: "back.out(1.5)", clearProps: "transform" }, 0.1);
+            tlCard.fromTo(title, { autoAlpha: 0, y: 15 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.2);
+            tlCard.fromTo(desc, { autoAlpha: 0, y: 15 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.3);
+            tlCard.to(line, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 0.4);
+            tlCard.fromTo(btn, { autoAlpha: 0, scale: 0.8, x: -10 }, { autoAlpha: 1, scale: 1, x: 0, duration: 0.6, ease: "power2.out" }, 0.5);
         });
 
         // --- Header Premium & Navigation Logic ---
