@@ -69,6 +69,34 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
+    <!-- Fallbacks de Acessibilidade e Performance -->
+    <script>
+        document.documentElement.classList.add('js-enabled');
+    </script>
+    <style>
+        .js-enabled .js-anim-servicos-up,
+        .js-enabled .js-anim-servicos-icon,
+        .js-enabled .js-anim-servico-title,
+        .js-enabled .js-anim-servico-desc,
+        .js-enabled .js-anim-servico-btn,
+        .js-enabled .js-anim-servico-num {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .js-enabled .js-anim-servico-dot {
+            opacity: 0;
+            transform: translateY(-50%) scale(0.5);
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
 </head>
 <body class="antialiased font-sans selection:bg-nude-500 selection:text-white">
 
@@ -524,11 +552,21 @@
     <section class="scroll-mt-24 py-32 md:py-40 bg-nude-50 relative" id="servicos-section">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
             
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 gsap-fade">
-                <div class="max-w-2xl bg-nude-50/80 backdrop-blur-sm p-4 -ml-4 rounded-2xl">
-                    <h2 class="font-serif text-4xl md:text-5xl text-escuro-900 mb-6">Cuidados para a pele <br>e para a sua beleza</h2>
-                    <p class="text-escuro-600 font-light leading-relaxed text-lg">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-2xl bg-nude-50/80 backdrop-blur-sm p-4 -ml-4 rounded-2xl js-anim-servicos-header">
+                    <div class="inline-flex items-center gap-4 mb-6">
+                        <span class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-escuro-900 font-semibold js-anim-servicos-up">NOSSOS CUIDADOS</span>
+                        <div class="w-12 h-[1px] bg-nude-500/50 origin-left scale-x-0 js-anim-servicos-line"></div>
+                    </div>
+                    <h2 class="font-serif text-4xl md:text-5xl text-escuro-900 mb-6">
+                        <span class="block js-anim-servicos-up">Cuidados pensados</span>
+                        <span class="block italic text-nude-500 font-light mt-1 js-anim-servicos-up">para a sua beleza</span>
+                    </h2>
+                    <p class="text-escuro-600 font-light leading-relaxed text-lg js-anim-servicos-up">
                         Se você procura limpeza de pele, dermaplaning, design de sobrancelhas ou remoção de sinais, conheça nossos serviços.
+                    </p>
+                    <p class="text-[10px] md:text-xs uppercase tracking-widest text-escuro-900/40 mt-8 font-semibold js-anim-servicos-up">
+                        Atendimento agendado &middot; Centro de Manaus
                     </p>
                 </div>
             </div>
@@ -537,77 +575,128 @@
             <div class="relative" id="servicos-journey">
                 
                 <!-- SVG Journey Line -->
-                <svg class="absolute top-0 bottom-0 left-[24px] md:left-1/2 w-[4px] md:-translate-x-1/2 h-full z-0 pointer-events-none" viewBox="0 0 4 100" preserveAspectRatio="none">
-                    <!-- Trilha pontilhada de fundo -->
-                    <path d="M 2 0 L 2 100" stroke="#E8DFD3" stroke-width="2" stroke-dasharray="1 1" vector-effect="non-scaling-stroke" />
+                <svg class="absolute top-0 bottom-0 left-[24px] md:left-1/2 w-[40px] md:w-[120px] md:-translate-x-1/2 h-full z-0 pointer-events-none overflow-visible" viewBox="0 0 100 1000" preserveAspectRatio="none">
                     <!-- Linha animada principal -->
-                    <path class="journey-svg-line" d="M 2 0 L 2 100" stroke="#C2A379" stroke-width="3" stroke-linecap="round" fill="none" vector-effect="non-scaling-stroke" stroke-dasharray="100" stroke-dashoffset="100" />
+                    <path class="journey-svg-line" d="M 50 0 C 70 50, 30 150, 50 200 C 70 300, 30 400, 50 500 C 70 600, 30 700, 50 800 C 70 900, 50 950, 50 1000" stroke="#C2A379" stroke-width="1.5" stroke-linecap="round" fill="none" vector-effect="non-scaling-stroke" />
+                    <!-- Folha no final -->
+                    <path class="journey-svg-leaf" d="M 50 1000 C 45 1010, 48 1020, 50 1030 C 52 1020, 55 1010, 50 1000 Z" fill="none" stroke="#C2A379" stroke-width="1.5" vector-effect="non-scaling-stroke" />
                 </svg>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-24 relative z-10">
                     
                     <!-- Serviço 1 (Esquerda) -->
-                    <div class="group relative bg-white p-10 md:p-12 rounded-[2rem] border border-nude-200/50 hover:shadow-glass transition-all duration-700 hover:-translate-y-2 flex flex-col justify-between gsap-stagger-2 mt-0">
+                    <div class="group relative bg-white hover:bg-[#F0EBE1] p-10 md:p-12 rounded-[2rem] border border-nude-200/50 hover:shadow-sm transition-all duration-400 flex flex-col justify-between js-anim-servico-card mt-0">
                         <!-- Ponto conector visual (desktop) -->
-                        <div class="hidden md:block absolute top-1/2 -right-8 w-4 h-4 bg-nude-500 rounded-full border-4 border-nude-50 shadow-[0_0_15px_rgba(194,163,121,0.5)] transform -translate-y-1/2 z-20"></div>
+                        <div class="hidden md:flex absolute top-1/2 -right-8 w-4 h-4 rounded-full border-4 border-nude-50 bg-white items-center justify-center transform -translate-y-1/2 z-20 transition-all duration-300 js-anim-servico-dot"></div>
                         
                         <div class="mb-12">
-                            <span class="text-nude-500 font-serif italic text-xl mb-4 block">01.</span>
-                            <h3 class="font-serif text-3xl text-escuro-900 mb-6">Limpeza de pele</h3>
-                            <p class="text-escuro-600 font-light leading-relaxed">Cuidado facial voltado à higienização e à manutenção da aparência saudável da pele. O atendimento deve considerar as características e necessidades individuais de cada cliente.</p>
+                            <div class="flex items-center justify-between mb-8">
+                                <span class="text-nude-500 font-serif italic text-xl js-anim-servico-num">01.</span>
+                                <!-- Ícone -->
+                                <div class="w-8 h-8 text-[#C2A379] opacity-60 group-hover:opacity-100 transition-opacity duration-300 js-anim-servico-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M12 2C7 2 3 6 3 11c0 2 1 4 2.5 5.5l5 5.5a2 2 0 0 0 3 0l5-5.5C20 15 21 13 21 11c0-5-4-9-9-9z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="font-serif text-3xl text-escuro-900 mb-6 transform group-hover:translate-x-1 transition-transform duration-400 js-anim-servico-title">Limpeza de pele</h3>
+                            <p class="text-escuro-600 font-light leading-relaxed js-anim-servico-desc">Cuidado facial voltado à higienização e à manutenção da aparência saudável da pele. O atendimento deve considerar as características e necessidades individuais de cada cliente.</p>
                         </div>
-                        <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="inline-flex items-center gap-4 text-escuro-900 font-semibold uppercase tracking-widest text-[10px] group-hover:text-nude-500 transition-colors">
-                            <span class="border-b border-escuro-900/20 group-hover:border-nude-500 pb-1 transition-colors">Quero agendar</span> 
-                            <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-2 transition-transform"></i>
-                        </a>
+                        
+                        <div class="pt-8 border-t border-transparent relative overflow-hidden js-anim-servico-footer">
+                            <div class="absolute top-0 left-0 h-[1px] bg-nude-200 w-full origin-left js-anim-servico-line"></div>
+                            <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="inline-flex items-center gap-4 text-escuro-900 font-semibold uppercase tracking-widest text-[10px]">
+                                <span class="border-b border-transparent group-hover:border-[#B99566] pb-1 transition-colors duration-400">Quero agendar</span> 
+                                <div class="w-8 h-8 rounded-full border border-nude-200 flex items-center justify-center group-hover:bg-[#B99566] group-hover:border-[#B99566] group-hover:text-white transition-all duration-400 js-anim-servico-btn">
+                                    <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-[3px] transition-transform duration-400"></i>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Serviço 2 (Direita - Deslocado para baixo) -->
-                    <div class="group relative bg-white p-10 md:p-12 rounded-[2rem] border border-nude-200/50 hover:shadow-glass transition-all duration-700 hover:-translate-y-2 flex flex-col justify-between gsap-stagger-2 mt-0 md:mt-32">
-                        <!-- Ponto conector visual (desktop) -->
-                        <div class="hidden md:block absolute top-1/2 -left-8 w-4 h-4 bg-nude-500 rounded-full border-4 border-nude-50 shadow-[0_0_15px_rgba(194,163,121,0.5)] transform -translate-y-1/2 z-20"></div>
-
+                    <!-- Serviço 2 (Direita) -->
+                    <div class="group relative bg-white hover:bg-[#F0EBE1] p-10 md:p-12 rounded-[2rem] border border-nude-200/50 hover:shadow-sm transition-all duration-400 flex flex-col justify-between js-anim-servico-card mt-0 md:mt-32">
+                        <div class="hidden md:flex absolute top-1/2 -left-8 w-4 h-4 rounded-full border-4 border-nude-50 bg-white items-center justify-center transform -translate-y-1/2 z-20 transition-all duration-300 js-anim-servico-dot"></div>
+                        
                         <div class="mb-12">
-                            <span class="text-nude-500 font-serif italic text-xl mb-4 block">02.</span>
-                            <h3 class="font-serif text-3xl text-escuro-900 mb-6">Dermaplaning</h3>
-                            <p class="text-escuro-600 font-light leading-relaxed">Procedimento de cuidado facial direcionado à renovação superficial e à melhora da aparência e da textura da pele.</p>
+                            <div class="flex items-center justify-between mb-8">
+                                <span class="text-nude-500 font-serif italic text-xl js-anim-servico-num">02.</span>
+                                <div class="w-8 h-8 text-[#C2A379] opacity-60 group-hover:opacity-100 transition-opacity duration-300 js-anim-servico-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M12 3L14.5 9.5L21 12L14.5 14.5L12 21L9.5 14.5L3 12L9.5 9.5L12 3Z" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="font-serif text-3xl text-escuro-900 mb-6 transform group-hover:translate-x-1 transition-transform duration-400 js-anim-servico-title">Dermaplaning</h3>
+                            <p class="text-escuro-600 font-light leading-relaxed js-anim-servico-desc">Procedimento de cuidado facial direcionado à renovação superficial e à melhora da aparência e da textura da pele.</p>
                         </div>
-                        <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="inline-flex items-center gap-4 text-escuro-900 font-semibold uppercase tracking-widest text-[10px] group-hover:text-nude-500 transition-colors">
-                            <span class="border-b border-escuro-900/20 group-hover:border-nude-500 pb-1 transition-colors">Quero conhecer</span> 
-                            <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-2 transition-transform"></i>
-                        </a>
+                        
+                        <div class="pt-8 border-t border-transparent relative overflow-hidden js-anim-servico-footer">
+                            <div class="absolute top-0 left-0 h-[1px] bg-nude-200 w-full origin-left js-anim-servico-line"></div>
+                            <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="inline-flex items-center gap-4 text-escuro-900 font-semibold uppercase tracking-widest text-[10px]">
+                                <span class="border-b border-transparent group-hover:border-[#B99566] pb-1 transition-colors duration-400">Quero conhecer</span> 
+                                <div class="w-8 h-8 rounded-full border border-nude-200 flex items-center justify-center group-hover:bg-[#B99566] group-hover:border-[#B99566] group-hover:text-white transition-all duration-400 js-anim-servico-btn">
+                                    <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-[3px] transition-transform duration-400"></i>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Serviço 3 (Esquerda) -->
-                    <div class="group relative bg-white p-10 md:p-12 rounded-[2rem] border border-nude-200/50 hover:shadow-glass transition-all duration-700 hover:-translate-y-2 flex flex-col justify-between gsap-stagger-2 mt-0 md:-mt-16">
-                        <!-- Ponto conector visual (desktop) -->
-                        <div class="hidden md:block absolute top-1/2 -right-8 w-4 h-4 bg-nude-500 rounded-full border-4 border-nude-50 shadow-[0_0_15px_rgba(194,163,121,0.5)] transform -translate-y-1/2 z-20"></div>
-
+                    <div class="group relative bg-white hover:bg-[#F0EBE1] p-10 md:p-12 rounded-[2rem] border border-nude-200/50 hover:shadow-sm transition-all duration-400 flex flex-col justify-between js-anim-servico-card mt-0 md:-mt-16">
+                        <div class="hidden md:flex absolute top-1/2 -right-8 w-4 h-4 rounded-full border-4 border-nude-50 bg-white items-center justify-center transform -translate-y-1/2 z-20 transition-all duration-300 js-anim-servico-dot"></div>
+                        
                         <div class="mb-12">
-                            <span class="text-nude-500 font-serif italic text-xl mb-4 block">03.</span>
-                            <h3 class="font-serif text-3xl text-escuro-900 mb-6">Design de sobrancelhas</h3>
-                            <p class="text-escuro-600 font-light leading-relaxed">Atendimento pensado para valorizar o olhar, respeitando o formato do rosto, os traços naturais e as preferências de cada cliente.</p>
+                            <div class="flex items-center justify-between mb-8">
+                                <span class="text-nude-500 font-serif italic text-xl js-anim-servico-num">03.</span>
+                                <div class="w-8 h-8 text-[#C2A379] opacity-60 group-hover:opacity-100 transition-opacity duration-300 js-anim-servico-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="font-serif text-3xl text-escuro-900 mb-6 transform group-hover:translate-x-1 transition-transform duration-400 js-anim-servico-title">Design de sobrancelhas</h3>
+                            <p class="text-escuro-600 font-light leading-relaxed js-anim-servico-desc">Atendimento pensado para valorizar o olhar, respeitando o formato do rosto, os traços naturais e as preferências de cada cliente.</p>
                         </div>
-                        <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="inline-flex items-center gap-4 text-escuro-900 font-semibold uppercase tracking-widest text-[10px] group-hover:text-nude-500 transition-colors">
-                            <span class="border-b border-escuro-900/20 group-hover:border-nude-500 pb-1 transition-colors">Quero cuidar do meu olhar</span> 
-                            <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-2 transition-transform"></i>
-                        </a>
+                        
+                        <div class="pt-8 border-t border-transparent relative overflow-hidden js-anim-servico-footer">
+                            <div class="absolute top-0 left-0 h-[1px] bg-nude-200 w-full origin-left js-anim-servico-line"></div>
+                            <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="inline-flex items-center gap-4 text-escuro-900 font-semibold uppercase tracking-widest text-[10px]">
+                                <span class="border-b border-transparent group-hover:border-[#B99566] pb-1 transition-colors duration-400">Cuidar do meu olhar</span> 
+                                <div class="w-8 h-8 rounded-full border border-nude-200 flex items-center justify-center group-hover:bg-[#B99566] group-hover:border-[#B99566] group-hover:text-white transition-all duration-400 js-anim-servico-btn">
+                                    <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-[3px] transition-transform duration-400"></i>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Serviço 4 (Direita - Deslocado para baixo) -->
-                    <div class="group relative bg-white p-10 md:p-12 rounded-[2rem] border border-nude-200/50 hover:shadow-glass transition-all duration-700 hover:-translate-y-2 flex flex-col justify-between gsap-stagger-2 mt-0 md:mt-16">
-                        <!-- Ponto conector visual (desktop) -->
-                        <div class="hidden md:block absolute top-1/2 -left-8 w-4 h-4 bg-nude-500 rounded-full border-4 border-nude-50 shadow-[0_0_15px_rgba(194,163,121,0.5)] transform -translate-y-1/2 z-20"></div>
-
+                    <!-- Serviço 4 (Direita) -->
+                    <div class="group relative bg-white hover:bg-[#F0EBE1] p-10 md:p-12 rounded-[2rem] border border-nude-200/50 hover:shadow-sm transition-all duration-400 flex flex-col justify-between js-anim-servico-card mt-0 md:mt-16">
+                        <div class="hidden md:flex absolute top-1/2 -left-8 w-4 h-4 rounded-full border-4 border-nude-50 bg-white items-center justify-center transform -translate-y-1/2 z-20 transition-all duration-300 js-anim-servico-dot"></div>
+                        
                         <div class="mb-12">
-                            <span class="text-nude-500 font-serif italic text-xl mb-4 block">04.</span>
-                            <h3 class="font-serif text-3xl text-escuro-900 mb-6">Remoção de sinais</h3>
-                            <p class="text-escuro-600 font-light leading-relaxed">Atendimento com avaliação individual para verificar o procedimento indicado para cada caso, garantindo segurança e eficácia.</p>
+                            <div class="flex items-center justify-between mb-8">
+                                <span class="text-nude-500 font-serif italic text-xl js-anim-servico-num">04.</span>
+                                <div class="w-8 h-8 text-[#C2A379] opacity-60 group-hover:opacity-100 transition-opacity duration-300 js-anim-servico-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.536-6.536l-1.414 1.414M6.879 17.121l-1.414 1.414M17.121 17.121l1.414 1.414M6.879 6.879L5.465 5.465"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="font-serif text-3xl text-escuro-900 mb-6 transform group-hover:translate-x-1 transition-transform duration-400 js-anim-servico-title">Remoção de sinais</h3>
+                            <p class="text-escuro-600 font-light leading-relaxed js-anim-servico-desc">Atendimento com avaliação individual para verificar o procedimento indicado para cada caso, garantindo segurança e eficácia.</p>
                         </div>
-                        <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="inline-flex items-center gap-4 text-escuro-900 font-semibold uppercase tracking-widest text-[10px] group-hover:text-nude-500 transition-colors">
-                            <span class="border-b border-escuro-900/20 group-hover:border-nude-500 pb-1 transition-colors">Solicitar avaliação</span> 
-                            <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-2 transition-transform"></i>
-                        </a>
+                        
+                        <div class="pt-8 border-t border-transparent relative overflow-hidden js-anim-servico-footer">
+                            <div class="absolute top-0 left-0 h-[1px] bg-nude-200 w-full origin-left js-anim-servico-line"></div>
+                            <a href="https://wa.me/message/R4BXG2N2G2G5G1" target="_blank" class="inline-flex items-center gap-4 text-escuro-900 font-semibold uppercase tracking-widest text-[10px]">
+                                <span class="border-b border-transparent group-hover:border-[#B99566] pb-1 transition-colors duration-400">Solicitar avaliação</span> 
+                                <div class="w-8 h-8 rounded-full border border-nude-200 flex items-center justify-center group-hover:bg-[#B99566] group-hover:border-[#B99566] group-hover:text-white transition-all duration-400 js-anim-servico-btn">
+                                    <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-[3px] transition-transform duration-400"></i>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -970,6 +1059,72 @@
                 end: "bottom top",
                 scrub: true
             }
+        });
+
+        // --- NOVA ANIMAÇÃO: Serviços (Nossos Cuidados) ---
+        
+        // 1. Cabeçalho de Serviços
+        const tlServicosHeader = gsap.timeline({
+            scrollTrigger: { trigger: "#servicos-section", start: "top 80%" }
+        });
+        tlServicosHeader.fromTo(".js-anim-servicos-up", 
+            { autoAlpha: 0, y: 20 }, 
+            { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "power2.out" }, 0
+        );
+        tlServicosHeader.to(".js-anim-servicos-line", { scaleX: 1, duration: 0.8, ease: "power2.out" }, 0.2);
+
+        // 2. Fio Dourado Contínuo (SVG)
+        const svgsServicos = document.querySelectorAll("#servicos-journey svg path");
+        svgsServicos.forEach(path => {
+            const length = path.getTotalLength();
+            if (length > 0) {
+                path.style.strokeDasharray = length;
+                path.style.strokeDashoffset = length;
+                gsap.to(path, {
+                    strokeDashoffset: 0,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "#servicos-journey",
+                        start: "top 70%",
+                        end: "bottom 30%",
+                        scrub: 1
+                    }
+                });
+            }
+        });
+
+        // 3. Cartões de Serviço e Pontos Dourados
+        const servicoCards = gsap.utils.toArray('.js-anim-servico-card');
+        servicoCards.forEach((card) => {
+            const dot = card.querySelector('.js-anim-servico-dot');
+            const num = card.querySelector('.js-anim-servico-num');
+            const icon = card.querySelector('.js-anim-servico-icon');
+            const title = card.querySelector('.js-anim-servico-title');
+            const desc = card.querySelector('.js-anim-servico-desc');
+            const btn = card.querySelector('.js-anim-servico-btn');
+            const line = card.querySelector('.js-anim-servico-line');
+            
+            const tlCard = gsap.timeline({
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // Ponto pulsando (se houver)
+            if (dot) {
+                tlCard.fromTo(dot, { scale: 0.75, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.5, ease: "back.out(1.5)" }, 0);
+                tlCard.fromTo(dot, { boxShadow: "0 0 0 rgba(194,163,121,0)" }, { boxShadow: "0 0 15px rgba(194,163,121,0.5)", duration: 0.8, ease: "power2.out" }, 0.2);
+            }
+
+            // Textos e elementos do card
+            tlCard.fromTo(num, { autoAlpha: 0, x: -10 }, { autoAlpha: 1, x: 0, duration: 0.4, ease: "power2.out" }, 0.2);
+            tlCard.fromTo(icon, { autoAlpha: 0, scale: 0.8 }, { autoAlpha: 1, scale: 1, duration: 0.6, ease: "back.out(1.5)" }, 0.3);
+            tlCard.fromTo(title, { autoAlpha: 0, y: 15 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.4);
+            tlCard.fromTo(desc, { autoAlpha: 0, y: 15 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.5);
+            tlCard.to(line, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 0.6);
+            tlCard.fromTo(btn, { autoAlpha: 0, scale: 0.8, x: -10 }, { autoAlpha: 1, scale: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.7);
         });
 
         // --- Header Premium & Navigation Logic ---
