@@ -743,8 +743,10 @@
     </section>
 
     <!-- Transição Orgânica (Fio Dourado e Flor) -->
-    <div class="w-full bg-nude-50 relative flex justify-center items-start pt-8 pb-8 credentials-about-transition overflow-hidden">
-        <svg class="w-[80px] md:w-[120px] h-[300px] md:h-[400px] overflow-visible" viewBox="0 0 200 400" preserveAspectRatio="xMidYMin slice">
+    <!-- Espaçamento real entre as seções (160px desktop, 96px mobile) -->
+    <div class="w-full bg-nude-50 relative flex justify-center h-[96px] md:h-[160px] credentials-about-transition z-10 pointer-events-none">
+        <!-- SVG absoluto para transbordar sobre as seções sem quebrar o layout -->
+        <svg class="absolute top-1/2 -translate-y-[40%] w-[80px] md:w-[120px] h-[300px] md:h-[400px] overflow-visible pointer-events-none" viewBox="0 0 200 400" preserveAspectRatio="xMidYMid meet">
             <!-- Caule Superior -->
             <path class="flower-stem" d="M 100 0 C 130 50, 70 100, 100 150" fill="none" stroke="#B99566" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke" />
             
@@ -757,22 +759,22 @@
             <!-- Flor -->
             <g class="flower-blossom">
                 <!-- Pétalas (6 unidades) -->
-                <!-- transform-origin: 100px 150px para escalar e rotacionar a partir do centro -->
-                <path class="flower-petal" style="transform-origin: 100px 150px;" d="M 100 150 C 85 110, 90 90, 100 80 C 110 90, 115 110, 100 150 Z" fill="none" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" />
-                <path class="flower-petal" style="transform-origin: 100px 150px;" d="M 100 150 C 85 110, 90 90, 100 80 C 110 90, 115 110, 100 150 Z" fill="none" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" transform="rotate(60 100 150)" />
-                <path class="flower-petal" style="transform-origin: 100px 150px;" d="M 100 150 C 85 110, 90 90, 100 80 C 110 90, 115 110, 100 150 Z" fill="none" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" transform="rotate(120 100 150)" />
-                <path class="flower-petal" style="transform-origin: 100px 150px;" d="M 100 150 C 85 110, 90 90, 100 80 C 110 90, 115 110, 100 150 Z" fill="none" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" transform="rotate(180 100 150)" />
-                <path class="flower-petal" style="transform-origin: 100px 150px;" d="M 100 150 C 85 110, 90 90, 100 80 C 110 90, 115 110, 100 150 Z" fill="none" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" transform="rotate(240 100 150)" />
-                <path class="flower-petal" style="transform-origin: 100px 150px;" d="M 100 150 C 85 110, 90 90, 100 80 C 110 90, 115 110, 100 150 Z" fill="none" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" transform="rotate(300 100 150)" />
+                <!-- svgOrigin será aplicado via GSAP -->
+                <path class="flower-petal" d="M 100 150 C 85 110, 90 90, 100 80 C 110 90, 115 110, 100 150 Z" fill="none" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" />
+                <path class="flower-petal" d="M 100 150 C 85 110, 90 90, 100 80 C 110 90, 115 110, 100 150 Z" fill="none" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" transform="rotate(60 100 150)" />
+                <path class="flower-petal" d="M 100 150 C 85 110, 90 90, 100 80 C 110 90, 115 110, 100 150 Z" fill="none" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" transform="rotate(120 100 150)" />
+                <path class="flower-petal" d="M 100 150 C 85 110, 90 90, 100 80 C 110 90, 115 110, 100 150 Z" fill="none" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" transform="rotate(180 100 150)" />
+                <path class="flower-petal" d="M 100 150 C 85 110, 90 90, 100 80 C 110 90, 115 110, 100 150 Z" fill="none" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" transform="rotate(240 100 150)" />
+                <path class="flower-petal" d="M 100 150 C 85 110, 90 90, 100 80 C 110 90, 115 110, 100 150 Z" fill="none" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" transform="rotate(300 100 150)" />
                 
                 <!-- Centro da Flor -->
-                <circle class="flower-center" style="transform-origin: 100px 150px;" cx="100" cy="150" r="5" fill="#F9F8F6" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" />
+                <circle class="flower-center" cx="100" cy="150" r="5" fill="#F9F8F6" stroke="#B99566" stroke-width="2" vector-effect="non-scaling-stroke" />
             </g>
         </svg>
     </div>
 
     <!-- 5. Autoridade e Galeria Editorial -->
-    <section class="pb-32 md:pb-48 pt-12 md:pt-16 bg-nude-50 relative" id="profissionais">
+    <section class="pb-32 md:pb-48 pt-0 bg-nude-50 relative" id="profissionais">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
             
             <!-- Abertura Autoridade -->
@@ -780,7 +782,10 @@
                 <div class="lg:col-span-5 relative z-20">
                     <h2 class="font-serif text-4xl md:text-5xl text-escuro-900 mb-8 leading-tight">
                         <span class="block about-reveal">Conheça quem</span> 
-                        <span class="block about-reveal">cuidará <span class="italic text-nude-500">de você</span></span>
+                        <span class="block">
+                            <span class="inline-block about-reveal">cuidará&nbsp;</span>
+                            <span class="inline-block italic text-nude-500 about-reveal">de você</span>
+                        </span>
                     </h2>
                     
                     <div class="space-y-3 text-sm text-escuro-600 font-light mb-10 border-l border-nude-200 pl-6 about-reveal">
@@ -1217,14 +1222,14 @@
             
             // 3/4. Pétalas abrem
             .fromTo(".flower-petal", 
-                { scale: 0.2, rotation: () => gsap.utils.random(-15, 15), autoAlpha: 0 },
+                { scale: 0.2, rotation: () => gsap.utils.random(-15, 15), autoAlpha: 0, svgOrigin: "100 150" },
                 { scale: 1, rotation: 0, autoAlpha: 1, duration: 1.2, stagger: 0.08, ease: "power3.out" },
                 "-=0.2"
             )
             
             // 5. Centro da flor
             .fromTo(".flower-center", 
-                { scale: 0, autoAlpha: 0 }, 
+                { scale: 0, autoAlpha: 0, svgOrigin: "100 150" }, 
                 { scale: 1, autoAlpha: 1, duration: 0.8, ease: "back.out(1.5)" },
                 "-=0.8"
             )
